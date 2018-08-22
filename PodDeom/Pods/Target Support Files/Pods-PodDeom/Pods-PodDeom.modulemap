@@ -1,0 +1,6 @@
+framework module Pods_PodDeom {
+  umbrella header "Pods-PodDeom-umbrella.h"
+
+  export *
+  module * { export * }
+}
