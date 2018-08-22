@@ -35,7 +35,7 @@
     _modelsArry = [NSMutableArray array];
     [_modelsArry addObjectsFromArray:@[@"流布局",@"CALayer相关使用",@"window相关使用"]];
     _vcsArry = [NSMutableArray array];
-    [_vcsArry addObjectsFromArray:@[@"WaterFallLayoutViewController"]];
+    [_vcsArry addObjectsFromArray:@[@"WaterFallLayoutViewController",@"TangramDemoVCTableVC"]];
     [self.view addSubview:listTabelView];
 }
 

@@ -27,8 +27,13 @@
 		00BF4269212BC06F008DD33D /* xxCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4268212BC06F008DD33D /* xxCollectionViewController.m */; };
 		00BF426C212BECE7008DD33D /* XXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF426B212BECE7008DD33D /* XXWindow.m */; };
 		00BF426F212C19D3008DD33D /* BrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF426E212C19D3008DD33D /* BrowserCell.m */; };
-		00BF4273212D0B61008DD33D /* TangramDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4272212D0B61008DD33D /* TangramDemoVC.m */; };
 		00BF4276212D59A7008DD33D /* BrowserImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4275212D59A7008DD33D /* BrowserImg.m */; };
+		00BF4279212D6DCF008DD33D /* MockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4277212D6DCF008DD33D /* MockViewController.m */; };
+		00BF427C212D6E08008DD33D /* CustomTangranmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF427B212D6E08008DD33D /* CustomTangranmVC.m */; };
+		00BF427F212D6E4F008DD33D /* TangramDemoVCTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF427E212D6E4F008DD33D /* TangramDemoVCTableVC.m */; };
+		00BF4287212D789E008DD33D /* TangramMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 00BF4281212D789E008DD33D /* TangramMock.json */; };
+		00BF4288212D789E008DD33D /* TangramSingleImageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4285212D789E008DD33D /* TangramSingleImageElement.m */; };
+		00BF4289212D789E008DD33D /* TangramSimpleTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4286212D789E008DD33D /* TangramSimpleTextElement.m */; };
 		00C4064E20BFEDD9004E4232 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4064D20BFEDD9004E4232 /* UIView+Extension.m */; };
 		00D9B7E420F73AF70018C0FE /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B7E320F73AF70018C0FE /* UIView+YYAdd.m */; };
 		00EA133820EDC452008785E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EA132620EDC451008785E3 /* ViewController.m */; };
@@ -101,10 +106,19 @@
 		00BF426B212BECE7008DD33D /* XXWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXWindow.m; sourceTree = "<group>"; };
 		00BF426D212C19D3008DD33D /* BrowserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowserCell.h; sourceTree = "<group>"; };
 		00BF426E212C19D3008DD33D /* BrowserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserCell.m; sourceTree = "<group>"; };
-		00BF4271212D0B61008DD33D /* TangramDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TangramDemoVC.h; sourceTree = "<group>"; };
-		00BF4272212D0B61008DD33D /* TangramDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TangramDemoVC.m; sourceTree = "<group>"; };
 		00BF4274212D59A6008DD33D /* BrowserImg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowserImg.h; sourceTree = "<group>"; };
 		00BF4275212D59A7008DD33D /* BrowserImg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserImg.m; sourceTree = "<group>"; };
+		00BF4277212D6DCF008DD33D /* MockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockViewController.m; sourceTree = "<group>"; };
+		00BF4278212D6DCF008DD33D /* MockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockViewController.h; sourceTree = "<group>"; };
+		00BF427A212D6E08008DD33D /* CustomTangranmVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTangranmVC.h; sourceTree = "<group>"; };
+		00BF427B212D6E08008DD33D /* CustomTangranmVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTangranmVC.m; sourceTree = "<group>"; };
+		00BF427D212D6E4F008DD33D /* TangramDemoVCTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TangramDemoVCTableVC.h; sourceTree = "<group>"; };
+		00BF427E212D6E4F008DD33D /* TangramDemoVCTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TangramDemoVCTableVC.m; sourceTree = "<group>"; };
+		00BF4281212D789E008DD33D /* TangramMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TangramMock.json; sourceTree = "<group>"; };
+		00BF4283212D789E008DD33D /* TangramSimpleTextElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramSimpleTextElement.h; sourceTree = "<group>"; };
+		00BF4284212D789E008DD33D /* TangramSingleImageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramSingleImageElement.h; sourceTree = "<group>"; };
+		00BF4285212D789E008DD33D /* TangramSingleImageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramSingleImageElement.m; sourceTree = "<group>"; };
+		00BF4286212D789E008DD33D /* TangramSimpleTextElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramSimpleTextElement.m; sourceTree = "<group>"; };
 		00C4064C20BFEDD9004E4232 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		00C4064D20BFEDD9004E4232 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		00D9B7E220F73AF30018C0FE /* UIView+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYAdd.h"; sourceTree = "<group>"; };
@@ -271,10 +285,37 @@
 		00BF4270212D09BB008DD33D /* TangramDemo */ = {
 			isa = PBXGroup;
 			children = (
-				00BF4271212D0B61008DD33D /* TangramDemoVC.h */,
-				00BF4272212D0B61008DD33D /* TangramDemoVC.m */,
+				00BF4280212D789E008DD33D /* Resources */,
+				00BF4282212D789E008DD33D /* Element */,
+				00BF4278212D6DCF008DD33D /* MockViewController.h */,
+				00BF4277212D6DCF008DD33D /* MockViewController.m */,
+				00BF427A212D6E08008DD33D /* CustomTangranmVC.h */,
+				00BF427B212D6E08008DD33D /* CustomTangranmVC.m */,
+				00BF427D212D6E4F008DD33D /* TangramDemoVCTableVC.h */,
+				00BF427E212D6E4F008DD33D /* TangramDemoVCTableVC.m */,
 			);
 			path = TangramDemo;
+			sourceTree = "<group>";
+		};
+		00BF4280212D789E008DD33D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00BF4281212D789E008DD33D /* TangramMock.json */,
+			);
+			name = Resources;
+			path = "../../../../../../Users/xiaoxiao/Tangram-iOS/TangramDemo/TangramDemo/Resources";
+			sourceTree = "<group>";
+		};
+		00BF4282212D789E008DD33D /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				00BF4283212D789E008DD33D /* TangramSimpleTextElement.h */,
+				00BF4284212D789E008DD33D /* TangramSingleImageElement.h */,
+				00BF4285212D789E008DD33D /* TangramSingleImageElement.m */,
+				00BF4286212D789E008DD33D /* TangramSimpleTextElement.m */,
+			);
+			name = Element;
+			path = "../../../../../../Users/xiaoxiao/Tangram-iOS/TangramDemo/TangramDemo/Element";
 			sourceTree = "<group>";
 		};
 		00EA134120EDC45D008785E3 /* TYPagerController */ = {
@@ -439,6 +480,7 @@
 				008FD15720BE3C41008D047E /* location.txt in Resources */,
 				00A9CDB121267AF10047E9E2 /* ImageCell.xib in Resources */,
 				00EA135E20EDC4B5008785E3 /* Main.storyboard in Resources */,
+				00BF4287212D789E008DD33D /* TangramMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BF427F212D6E4F008DD33D /* TangramDemoVCTableVC.m in Sources */,
 				009BFE9C20FDE25800BD430B /* YLProgressBar.m in Sources */,
 				00EA133820EDC452008785E3 /* ViewController.m in Sources */,
 				00EA135420EDC45D008785E3 /* TYPagerViewLayout.m in Sources */,
@@ -531,6 +574,7 @@
 				00A9CDB421267B240047E9E2 /* ImageModel.m in Sources */,
 				00EA135920EDC45D008785E3 /* TYTabPagerBarCell.m in Sources */,
 				00EA135720EDC45D008785E3 /* TYTabPagerView.m in Sources */,
+				00BF4289212D789E008DD33D /* TangramSimpleTextElement.m in Sources */,
 				00BF426F212C19D3008DD33D /* BrowserCell.m in Sources */,
 				00EA133B20EDC452008785E3 /* AppDelegate.m in Sources */,
 				008FD14F20BD3D1D008D047E /* UIView+CXExtension.m in Sources */,
@@ -538,14 +582,16 @@
 				00BF4269212BC06F008DD33D /* xxCollectionViewController.m in Sources */,
 				00A9CDB021267AF10047E9E2 /* ImageCell.m in Sources */,
 				00EA135820EDC45D008785E3 /* TYTabPagerController.m in Sources */,
+				00BF4288212D789E008DD33D /* TangramSingleImageElement.m in Sources */,
 				0046939020BE51D1005BAA72 /* NSString+Category.m in Sources */,
 				00EA135A20EDC45D008785E3 /* TYPagerView.m in Sources */,
 				00A9CDB92126C7FC0047E9E2 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				00A9CDA7212679570047E9E2 /* WaterFallLayoutViewController.m in Sources */,
 				00C4064E20BFEDD9004E4232 /* UIView+Extension.m in Sources */,
+				00BF427C212D6E08008DD33D /* CustomTangranmVC.m in Sources */,
 				00A9CDAC212679B30047E9E2 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				00D9B7E420F73AF70018C0FE /* UIView+YYAdd.m in Sources */,
-				00BF4273212D0B61008DD33D /* TangramDemoVC.m in Sources */,
+				00BF4279212D6DCF008DD33D /* MockViewController.m in Sources */,
 				003017F920B66874004644B2 /* main.m in Sources */,
 				00A4FE9D20D364A000BBB736 /* NSFileManager+Tools.m in Sources */,
 				00EA135320EDC45D008785E3 /* TYPagerController.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  TangramDemoVC.h
+//  TangramDemoVCTableVC.h
 //  PodDeom
 //
 //  Created by Xiao Xiao on 2018/8/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TangramDemoVC : UIViewController
+@interface TangramDemoVCTableVC : UITableViewController
 
 @end
