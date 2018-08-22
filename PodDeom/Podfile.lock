@@ -19,6 +19,7 @@ PODS:
   - IQKeyboardManager (5.0.8)
   - LazyScroll (1.0.1):
     - TMUtils (~> 1.0.1)
+  - pop (1.0.10)
   - Reveal-SDK (6)
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - AFNetwork (~> 0.1.0)
   - IQKeyboardManager (~> 5.0.7)
   - LazyScroll
+  - pop
   - Reveal-SDK (= 6)
   - SDWebImage (~> 4.2.3)
   - Tangram
@@ -47,6 +49,7 @@ SPEC REPOS:
     - AFNetworking
     - IQKeyboardManager
     - LazyScroll
+    - pop
     - Reveal-SDK
     - SDWebImage
     - Tangram
@@ -59,6 +62,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   LazyScroll: 23f4550711452ad4306a30fc75106a7a5556a882
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Reveal-SDK: 67460e58f93711c7b18631d12c2b5de7740e48b5
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   Tangram: f15845b96a2a56288220820273a6264052984757
@@ -66,6 +70,6 @@ SPEC CHECKSUMS:
   VirtualView: e8f8010083797020eea5c287a51e002b93d1a863
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: aad5faae2550e594849cbdfce62f86cbb8ec6db2
+PODFILE CHECKSUM: 26c56d60489d09227b00d895dc568ea823eb8404
 
 COCOAPODS: 1.5.3

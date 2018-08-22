@@ -28,6 +28,7 @@
 		00BF426C212BECE7008DD33D /* XXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF426B212BECE7008DD33D /* XXWindow.m */; };
 		00BF426F212C19D3008DD33D /* BrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF426E212C19D3008DD33D /* BrowserCell.m */; };
 		00BF4273212D0B61008DD33D /* TangramDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4272212D0B61008DD33D /* TangramDemoVC.m */; };
+		00BF4276212D59A7008DD33D /* BrowserImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BF4275212D59A7008DD33D /* BrowserImg.m */; };
 		00C4064E20BFEDD9004E4232 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4064D20BFEDD9004E4232 /* UIView+Extension.m */; };
 		00D9B7E420F73AF70018C0FE /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D9B7E320F73AF70018C0FE /* UIView+YYAdd.m */; };
 		00EA133820EDC452008785E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EA132620EDC451008785E3 /* ViewController.m */; };
@@ -102,6 +103,8 @@
 		00BF426E212C19D3008DD33D /* BrowserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserCell.m; sourceTree = "<group>"; };
 		00BF4271212D0B61008DD33D /* TangramDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TangramDemoVC.h; sourceTree = "<group>"; };
 		00BF4272212D0B61008DD33D /* TangramDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TangramDemoVC.m; sourceTree = "<group>"; };
+		00BF4274212D59A6008DD33D /* BrowserImg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowserImg.h; sourceTree = "<group>"; };
+		00BF4275212D59A7008DD33D /* BrowserImg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserImg.m; sourceTree = "<group>"; };
 		00C4064C20BFEDD9004E4232 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		00C4064D20BFEDD9004E4232 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		00D9B7E220F73AF30018C0FE /* UIView+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYAdd.h"; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				00A9CDAF21267AF10047E9E2 /* ImageCell.xib */,
 				00BF426D212C19D3008DD33D /* BrowserCell.h */,
 				00BF426E212C19D3008DD33D /* BrowserCell.m */,
+				00BF4274212D59A6008DD33D /* BrowserImg.h */,
+				00BF4275212D59A7008DD33D /* BrowserImg.m */,
 				00BF426A212BECE7008DD33D /* XXWindow.h */,
 				00BF426B212BECE7008DD33D /* XXWindow.m */,
 			);
@@ -489,6 +494,7 @@
 				"${BUILT_PRODUCTS_DIR}/Tangram/Tangram.framework",
 				"${BUILT_PRODUCTS_DIR}/VirtualView/VirtualView.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -502,6 +508,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tangram.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirtualView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,6 +526,7 @@
 				00EA133820EDC452008785E3 /* ViewController.m in Sources */,
 				00EA135420EDC45D008785E3 /* TYPagerViewLayout.m in Sources */,
 				00EA135620EDC45D008785E3 /* TYTabPagerBarLayout.m in Sources */,
+				00BF4276212D59A7008DD33D /* BrowserImg.m in Sources */,
 				00EA135520EDC45D008785E3 /* TYTabPagerBar.m in Sources */,
 				00A9CDB421267B240047E9E2 /* ImageModel.m in Sources */,
 				00EA135920EDC45D008785E3 /* TYTabPagerBarCell.m in Sources */,

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^nextPageBlock)(NSInteger nextPage);
 @interface xxCollectionViewController : UICollectionViewController
+@property(nonatomic, copy)nextPageBlock  nextPageBlock;
 + (xxCollectionViewController *)xxCollectionViewController:(NSInteger) selected imgsArry:(NSArray *)imgsArry;
 @end

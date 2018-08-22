@@ -30,6 +30,10 @@ static NSString * const reuseIdentifier = @"Cell";
     return vc;
 }
 
+- (void)dealloc{
+    NSLog(@"xxCollectionViewController dealloc");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,11 +43,9 @@ static NSString * const reuseIdentifier = @"Cell";
     CGFloat lineSpacing = ((UICollectionViewFlowLayout *)self.collectionViewLayout).minimumLineSpacing;
 
     self.collectionView.width += lineSpacing;
-
     self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, lineSpacing);
 
     [self.collectionView registerClass:[BrowserCell class] forCellWithReuseIdentifier:reuseIdentifier];
-//    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([ImageCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([ImageCell class])];
     [self.collectionView setContentOffset:CGPointMake(self.collectionView.width*_selectedIdx, 0)];
     self.collectionView.pagingEnabled = YES;
     [self.collectionView reloadData];
@@ -51,6 +53,7 @@ static NSString * const reuseIdentifier = @"Cell";
         self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     else self.automaticallyAdjustsScrollViewInsets = NO;
 }
+
 - (BOOL)prefersStatusBarHidden{
     return YES;
 }
@@ -79,7 +82,7 @@ static NSString * const reuseIdentifier = @"Cell";
     BrowserCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
         int num = abs(rand())%0xFFFF;
             cell.backgroundColor = UIColorFromRGBA(num, 1.0);
-    [cell setImgPath:_imgsArry[indexPath.item]];   
+    [cell setImgPath:_imgsArry[indexPath.item]];
     return cell;
 }
 
@@ -87,6 +90,12 @@ static NSString * const reuseIdentifier = @"Cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
         return CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    if (self.nextPageBlock) {
+        self.nextPageBlock(round(scrollView.contentOffset.x)/self.collectionView.width);
+    }
 }
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

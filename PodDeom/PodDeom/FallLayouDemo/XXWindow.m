@@ -8,17 +8,20 @@
 
 #import "XXWindow.h"
 #import "xxCollectionViewController.h"
+#import "UIView+CXExtension.h"
 #define UIColorFromRGBA(rgbValue, a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 @interface XXWindow()
 @property(nonatomic, strong)UIImageView *imgView;
 @property(nonatomic, strong)xxCollectionViewController *browser;
+@property(nonatomic, assign)NSInteger selectedIdx;
+@property(nonatomic, assign)NSInteger currentIdx;
 @end
 @implementation XXWindow
 - (instancetype)initWithFrame:(CGRect)frame{
     if ([super initWithFrame:frame]) {
         UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenWindow:)];
-        tap.numberOfTapsRequired =2;
+        tap.numberOfTapsRequired =1;
         [self addGestureRecognizer:tap];
     }
     return self;
@@ -34,30 +37,42 @@
 }
 
 - (void) hiddenWindow:(UITapGestureRecognizer *)tap{
-    NSLog(@"__________%ld",tap.numberOfTapsRequired);
-    _browser.view.hidden = YES;
-    _browser = nil;
+    UIViewController *vc = [self rootViewController];
+    self.rootViewController = nil;
+    vc = nil;
+    if (_currentIdx != _selectedIdx){
+        if (self.hiddenImgBlock) {
+            self.hiddenImgBlock();
+        }
+        self.hidden = YES;
+       [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        return;
+     };
    __block UIImageView *copyView = [self viewWithTag:100];
+    CGRect toRect = [self.imgView convertRect:self.imgView.frame toView:self];
     [UIView animateWithDuration:0.3 animations:^{
         self.backgroundColor = UIColorFromRGBA(0x00000, 0.0);
-        copyView.frame = self.imgView.frame;
+        copyView.frame = toRect;
     } completion:^(BOOL finished) {
         if (finished == YES) {
             self.hidden = YES;
+            [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
             if (self.hiddenImgBlock) {
                 self.hiddenImgBlock();
             }
-            [copyView removeFromSuperview];
             copyView = nil;
         }
     }];
 }
 - (void) showImg:(UIImageView *)sourceView selectedIdx:(NSInteger) selected imgsArry:(NSArray *)imgsArry{
     _imgView = sourceView;
+    _selectedIdx = selected;
     self.hidden = NO;
     [self makeKeyAndVisible];
     CGRect fromeRect = [sourceView convertRect:sourceView.frame toView:self];
     UIImageView *copyView = [[UIImageView alloc] initWithImage:sourceView.image];
+    copyView.contentMode = UIViewContentModeScaleAspectFill;
+    
     float width = sourceView.image.size.width;
     float height = sourceView.image.size.height;
     if (height/width >(16.0/9.0)) {
@@ -77,9 +92,20 @@
         self.backgroundColor = UIColorFromRGBA(0x00000, 1.0);
     } completion:^(BOOL finished) {
         if (finished == YES) {
-            self.browser = [xxCollectionViewController xxCollectionViewController:selected imgsArry:imgsArry];
-            self.rootViewController = self.browser;
+           xxCollectionViewController *vc = [xxCollectionViewController xxCollectionViewController:selected imgsArry:imgsArry];
+            __weak typeof(self) weakSelf = self;
+            [vc setNextPageBlock:^(NSInteger nextPage) {
+                weakSelf.currentIdx = nextPage;
+            }];
+            self.rootViewController = vc;
         }
     }];
 }
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+//    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+//        return YES;
+//    }
+//}
+
+
 @end

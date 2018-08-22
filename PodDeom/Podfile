@@ -8,4 +8,6 @@ use_frameworks!
    pod 'SDWebImage', '~> 4.2.3'
    pod 'Tangram'
    pod 'LazyScroll'
+   pod 'pop'
+
 end

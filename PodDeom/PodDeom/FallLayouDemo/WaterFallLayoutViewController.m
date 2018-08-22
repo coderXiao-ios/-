@@ -17,12 +17,14 @@
 #import "UIImageView+WebCache.h"
 #import "SDWebImageManager.h"
 #define UIColorFromRGBA(rgbValue, a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
-
+static NSInteger kHeaderViewHeight = 160;
 @interface WaterFallLayoutViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
 @property(nonatomic, strong)UICollectionView *collectionView;
 @property(nonatomic, strong)NSMutableArray<ImageModel *> *modelArry;
 @property(nonatomic, strong)UIView *headerView;
 @property(nonatomic, strong)UIView *navigationView;
+@property (nonatomic, strong) dispatch_group_t    requestGroup;
+@property(nonatomic, strong)NSMutableArray *imgsArry;
 @end
 
 @implementation WaterFallLayoutViewController
@@ -30,16 +32,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _modelArry = [NSMutableArray array];
     self.fd_prefersNavigationBarHidden = YES;
     self.view.backgroundColor = UIColorFromRGBA(0xf0f0f0, 1.0);
     NSArray *imgsArry = @[@"http://img1.hefantv.com/20180816/b9c7b43d4a2042d8a5fd326f33e1ed42.jpg",@"http://img1.hefantv.com/20180813/25a3cabfa62f4c00963fac098238e4c2.jpg",@"http://img1.hefantv.com/20180815/095dea68086341b8a3408387088577c9.jpg",@"http://img.hefantv.com/20180427/6abed6bb8e344115a278b3b9652a3d84.jpg",@"http://img.hefantv.com/20180427/b633a180299b411e9112072c06fbc1de.jpg",@"http://img.hefantv.com/20180427/d68c350ba9944c9cb28eb38b34e88e82.jpg",@"http://img.hefantv.com/20180427/7d82961c30164e2093dab0253c24685e.jpg",@"http://img.hefantv.com/20180427/e349255054414481a865022716054e85.jpg",@"http://img.hefantv.com/20180427/97d6fff14d4a41ae8359b62b36337f46.jpg"];
-   __block dispatch_group_t  requestGroup = dispatch_group_create();
+    _imgsArry = [NSMutableArray arrayWithArray:imgsArry];
+    _requestGroup = dispatch_group_create();
     __weak typeof(self) weakSelf = self;
     [imgsArry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *url = (NSString *)obj;
-        UIImageView *imgView = [[UIImageView alloc] init];
-        dispatch_group_enter(requestGroup);
-        [imgView  sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil options:SDWebImageRetryFailed completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        dispatch_group_enter(weakSelf.requestGroup);
+        
+        [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:url] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
             if (image == nil) {
                 NSLog(@"未加载出来");
             }else{
@@ -51,13 +56,16 @@
                 model.imgHeight = image.size.height;
                 [weakSelf.modelArry addObject:model];
             }
-            dispatch_group_leave(requestGroup);
+            dispatch_group_leave(weakSelf.requestGroup);
         }];
     }];
     
-    dispatch_group_notify(requestGroup, dispatch_get_main_queue(), ^{
+    dispatch_group_notify(_requestGroup, dispatch_get_main_queue(), ^{
         [weakSelf.collectionView reloadData];
     });
+    if (@available(iOS 11.0, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else  self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewWillLayoutSubviews{
@@ -89,7 +97,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ImageCell class]) forIndexPath:indexPath];
-        cell.imageView.image = [UIImage imageNamed:@"109951163449951634"];
+        cell.imageView.image = [UIImage imageNamed:@"109951163449951634.jpeg"];
+        _headerView = cell;
         return cell;
     }
     ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ImageCell class]) forIndexPath:indexPath];
@@ -102,7 +111,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
   __block ImageCell *cell = (ImageCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.hidden = YES;
-    [[XXWindow shareWindow] showImg:cell.imageView selectedIdx:2 imgsArry:@[@"http://img1.hefantv.com/20180816/b9c7b43d4a2042d8a5fd326f33e1ed42.jpg",@"http://img1.hefantv.com/20180813/25a3cabfa62f4c00963fac098238e4c2.jpg",@"http://img1.hefantv.com/20180815/095dea68086341b8a3408387088577c9.jpg",@"http://img.hefantv.com/20180427/6abed6bb8e344115a278b3b9652a3d84.jpg",@"http://img.hefantv.com/20180427/b633a180299b411e9112072c06fbc1de.jpg",@"http://img.hefantv.com/20180427/d68c350ba9944c9cb28eb38b34e88e82.jpg",@"http://img.hefantv.com/20180427/7d82961c30164e2093dab0253c24685e.jpg",@"http://img.hefantv.com/20180427/e349255054414481a865022716054e85.jpg",@"http://img.hefantv.com/20180427/97d6fff14d4a41ae8359b62b36337f46.jpg"]];
+    [[XXWindow shareWindow] showImg:cell.imageView selectedIdx:indexPath.row imgsArry:indexPath.section == 0?@[@"109951163449951634.jpeg"]:_imgsArry];
     [[XXWindow shareWindow] setHiddenImgBlock:^{
         cell.hidden = NO;
     }];
@@ -159,7 +168,6 @@
         CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
         layout.minimumInteritemSpacing =10;
         layout.minimumColumnSpacing =10;
-//        layout.footerHeight =10;
         layout.itemRenderDirection = CHTCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor clearColor];
