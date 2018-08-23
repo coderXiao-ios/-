@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "965719617DDFCA588E2D02A7D9B5B467"
+               BlueprintIdentifier = "CEA36570CFFEEEA8F66D5EFADE5438A4"
                BlueprintName = "Tangram"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Tangram.framework">

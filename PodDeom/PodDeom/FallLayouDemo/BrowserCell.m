@@ -29,10 +29,31 @@
     }
     return self;
 }
-
 - (void)layoutSubviews{
     [super layoutSubviews];
     _imgScroll.frame = self.contentView.bounds;
+}
+#pragma mark --Gestrure
+- (void) addGesture{
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
+    [self addGestureRecognizer:singleTap];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapAction:)];
+    doubleTap.numberOfTapsRequired  =2;
+    [self addGestureRecognizer:doubleTap];
+    UILongPressGestureRecognizer *pressTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressTapAction:)];
+    [self addGestureRecognizer:pressTap];
+}
+
+- (void)singleTapAction:(UITapGestureRecognizer *)gesture{
+    
+}
+
+- (void)doubleTapAction:(UITapGestureRecognizer *)gesture{
+    
+}
+
+- (void)longPressTapAction:(UITapGestureRecognizer *)gesture{
+    
 }
 
 - (void) setImgPath:(NSString *)imgUrl{

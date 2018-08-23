@@ -16,14 +16,15 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - FLAnimatedImage (1.0.12)
   - IQKeyboardManager (5.0.8)
   - LazyScroll (1.0.1):
     - TMUtils (~> 1.0.1)
   - pop (1.0.10)
   - Reveal-SDK (6)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - Tangram (2.1.4):
     - LazyScroll (= 1.0.1)
     - SDWebImage (~> 4.2)
@@ -35,11 +36,12 @@ PODS:
 
 DEPENDENCIES:
   - AFNetwork (~> 0.1.0)
+  - FLAnimatedImage (~> 1.0.12)
   - IQKeyboardManager (~> 5.0.7)
   - LazyScroll
   - pop
   - Reveal-SDK (= 6)
-  - SDWebImage (~> 4.2.3)
+  - SDWebImage
   - Tangram
   - YYText (~> 1.0.7)
 
@@ -47,6 +49,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetwork
     - AFNetworking
+    - FLAnimatedImage
     - IQKeyboardManager
     - LazyScroll
     - pop
@@ -60,16 +63,17 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetwork: 0dbdb2ffb4a7770b3d1802dc85b50ab31263f2c2
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   LazyScroll: 23f4550711452ad4306a30fc75106a7a5556a882
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Reveal-SDK: 67460e58f93711c7b18631d12c2b5de7740e48b5
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Tangram: f15845b96a2a56288220820273a6264052984757
   TMUtils: 8af8e4695b6e4086d0545ecd7cd025556515ab42
   VirtualView: e8f8010083797020eea5c287a51e002b93d1a863
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 26c56d60489d09227b00d895dc568ea823eb8404
+PODFILE CHECKSUM: ade00f62a7f0e65efa0131debcef5422ea286977
 
 COCOAPODS: 1.5.3

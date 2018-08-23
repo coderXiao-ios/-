@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B833B1A219FAC8D6C812B65AAAC39D1D"
+               BlueprintIdentifier = "9EA181E1B3D3F2A496537C3D8929CDC7"
                BlueprintName = "VirtualView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "VirtualView.framework">

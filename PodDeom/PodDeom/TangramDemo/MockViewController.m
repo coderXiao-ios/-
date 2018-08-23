@@ -80,10 +80,10 @@
     self.layoutModelArray = [[dict objectForKey:@"data"] objectForKey:@"cards"];
     [TangramDefaultItemModelFactory registElementType:@"1" className:@"TangramSingleImageElement"];
     [TangramDefaultItemModelFactory registElementType:@"2" className:@"TangramSimpleTextElement"];
-//    [TangramDefaultItemModelFactory registElementType:@"110" className:@"TangramSingleImageElement"];
-//    [TangramDefaultItemModelFactory registElementType:@"202" className:@"TangramSingleImageElement"];
-//    [TangramDefaultItemModelFactory registElementType:@"203" className:@"TangramSingleImageElement"];
-//    [TangramDefaultItemModelFactory registElementType:@"204" className:@"TangramSingleImageElement"];
+    //    [TangramDefaultItemModelFactory registElementType:@"110" className:@"TangramSingleImageElement"];
+    //    [TangramDefaultItemModelFactory registElementType:@"202" className:@"TangramSingleImageElement"];
+    //    [TangramDefaultItemModelFactory registElementType:@"203" className:@"TangramSingleImageElement"];
+    //    [TangramDefaultItemModelFactory registElementType:@"204" className:@"TangramSingleImageElement"];
     self.layoutArray = [TangramDefaultDataSourceHelper layoutsWithArray:self.layoutModelArray tangramBus:self.tangramBus];
 }
 

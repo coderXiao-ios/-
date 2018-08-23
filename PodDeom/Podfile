@@ -5,9 +5,10 @@ use_frameworks!
    pod 'Reveal-SDK', '6'
    pod 'YYText', '~> 1.0.7'
    pod 'AFNetwork', '~> 0.1.0'
-   pod 'SDWebImage', '~> 4.2.3'
+   pod 'SDWebImage'
    pod 'Tangram'
    pod 'LazyScroll'
    pod 'pop'
+   pod 'FLAnimatedImage', '~> 1.0.12'
 
 end
